@@ -1,0 +1,61 @@
+<div class="row">
+  <div class="col-md-8 col-lg-6 col-xl-5 mx-auto">
+
+    <div class="card card-primary mb-1">
+
+      <div class="card-header">
+        <div class="row">
+          <div class="col-11">
+            <div>#{{project.projectID}}</div>
+            <h5>{{project.projectName}}</h5>
+          </div>
+          <!-- <div class="col-1">
+           <ng-content></ng-content>
+          </div> -->
+        </div>
+      </div>
+
+      <div class="card-body">
+        <!-- [hidden]="hideDetails" -->
+        <!-- [hidden]="projectsService.hideDetails" -->
+        <!-- <table class="table table-borderless table-sm" [hidden]="hideDetails" #tbl>-->
+        <table class="table table-borderless table-sm" >
+          <tr>
+            <th>Date of Start</th>
+            <td>{{project.dateOfStart}}</td>
+          </tr>
+          <tr>
+            <th>Team Size</th>
+            <td>
+              <!-- <span>{{project.teamSize}} </span> -->
+              <span class="text-info">{{project.teamSize | numberToWords:' and '}}</span>
+            </td>
+          </tr>
+          <tr>
+            <th>Client Location</th>
+            <td>{{project.clientLocation?.clientLocationName}}</td>
+          </tr>
+          <tr>
+            <th>Status</th>
+            <td>{{project.status}}</td>
+          </tr>
+        </table>
+      </div>
+
+      <div class="card-footer">
+        <a class="btn btn-info" [routerLink]="['/admin','projects']">
+            Back
+        </a>
+      </div>
+      <!-- <div class="card-footer">
+        <button class="btn btn-info" (click)="onEditClick($event, i)" data-toggle="modal" data-target="#editModal">Edit</button>&nbsp;
+        <button class="btn btn-warning" (click)="onDeleteClick($event, i)" data-toggle="modal" data-target="#deleteModal">Delete</button>
+
+        <a class="btn btn-primary ml-3" [routerLink]=" [ '/', 'projects', 'view', project.projectID] ">Learn More</a>
+
+      </div> -->
+    </div>
+
+
+  </div>
+</div>
